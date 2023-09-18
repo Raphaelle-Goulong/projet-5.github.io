@@ -17,41 +17,58 @@ const slides = [
 	}
 ]
 
+let index = 0
+console.log(slides[index].image);
+
 // evenement click
-let arrow = document.querySelector(".arrow_left");
-arrow.addEventListener("click", function(){
+const arrowLeft = document.querySelector(".arrow_left");
+arrowLeft.addEventListener("click", function(){
 	console.log("vous avez cliqué sur le bouton gauche")
 });
-let arrow1 = document.querySelector(".arrow_right");
-arrow1.addEventListener("click", () =>{
+const arrowRight = document.querySelector(".arrow_right");
+arrowRight.addEventListener("click", () =>{
 	console.log("vous avez cliqué sur le bouton droit")
 });
 // evenement click
 
 
 // evenement ajout dot
-let body = document.querySelector(".dots")
-let html = `
-	<div class="dot"></div>
-	<div class="dot"></div>
-	<div class="dot"></div>
-	<div class="dot"></div>
-`
-body.innerHTML = html
+let dots = document.querySelector(".dots")
+// let html = `
+// 	<div class="dot"></div>
+	
+// `
+// body.innerHTML = html
 // evenement ajout dot
 
 
 // ajout d'une class
-let addClass = document.querySelector(".dot")
-addClass.classList.add("dot_selected")
+
 // ajout d'une class
+
+
+// evenement ajout dot
+// let main = document.querySelector("#banner")
+// console.log(main);
+// let mainImages = `
+// 	<img class="banner-img" src="./assets/images/slideshow/slide2.jpg" alt="Banner Print-it">
+// `
+// body.innerHTML = mainImages
+// evenement ajout dot
+
+
 
 
 // boucle image
 for (let i = 0; i < slides.length; i++) {
-	// const element = dot[slides];
-	console.log(slides );
+	let div = document.createElement("div")
+	div.classList.add("dot")
+	// console.log(test);
+	dots.appendChild(div)
+		// console.log(slides[1]);
 }
 // boucle image
 
+let addClass = document.querySelectorAll(".dot")
+addClass[0].classList.add("dot_selected")
 
