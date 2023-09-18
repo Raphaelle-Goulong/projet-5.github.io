@@ -48,12 +48,10 @@ addClass.classList.add("dot_selected")
 
 
 // boucle image
-for (let dot = 0; dot < slides.length; dot++) {
+for (let i = 0; i < slides.length; i++) {
 	// const element = dot[slides];
-	console.log([{}] );
+	console.log(slides );
 }
 // boucle image
 
-function name(params) {
-	return
-}
+
