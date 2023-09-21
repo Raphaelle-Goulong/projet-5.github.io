@@ -23,11 +23,19 @@ console.log(slides[index].image);
 // evenement click
 const arrowLeft = document.querySelector(".arrow_left");
 arrowLeft.addEventListener("click", function(){
-	console.log("vous avez cliqué sur le bouton gauche")
+	index--
+	console.log(index)
+	let bannerImg= document.querySelector(".banner-img")
+	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 });
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", () =>{
-	console.log("vous avez cliqué sur le bouton droit")
+	index++
+	//(faire la condition ici)
+	console.log(index)
+
+	let bannerImg= document.querySelector(".banner-img")
+	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 });
 // evenement click
 
@@ -72,3 +80,25 @@ for (let i = 0; i < slides.length; i++) {
 let addClass = document.querySelectorAll(".dot")
 addClass[0].classList.add("dot_selected")
 
+
+// let img
+
+// for (let i = 0; i < slides.length; i++) {
+	
+// let image = document.querySelector("#banner")
+	
+// 	 img += `
+// 	<img class="banner-img" src="./assets/images/slideshow/${slides[index].image}" alt="Banner Print-it">
+// 	<p>${slides[index].tagLine}</p>
+// 	`
+// 	index++
+// 	console.log("test");
+// 	image.innerHTML = img
+// }
+
+// for (let i = 0; i < slides.length; i++) {
+// 	let image = document.createElement("img")
+// 	image.classList.add("banner-img")
+// 	banner.appendChild(image)
+		
+// 	}
