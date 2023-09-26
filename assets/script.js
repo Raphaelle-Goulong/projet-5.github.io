@@ -20,6 +20,10 @@ const slides = [
 let index = 0
 console.log(slides[index].image);
 
+let text = 0
+console.log(slides[text].tagLine);
+
+
 // evenement click
 const arrowLeft = document.querySelector(".arrow_left");
 arrowLeft.addEventListener("click", function(){
@@ -27,6 +31,10 @@ arrowLeft.addEventListener("click", function(){
 	console.log(index)
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
+
+	let paragraphe = document.querySelector("p")
+	paragraphe.p =  " " + slides[index].tagLine
+	console.log(paragraphe);
 });
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", () =>{
@@ -36,38 +44,18 @@ arrowRight.addEventListener("click", () =>{
 
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
+
+	let paragraphe = document.querySelector("p")
+	paragraphe.textContent = + slides[text].tagLine
+	console.log(paragraphe);
 });
 // evenement click
 
 
 // evenement ajout dot
 let dots = document.querySelector(".dots")
-// let html = `
-// 	<div class="dot"></div>
-	
-// `
-// body.innerHTML = html
-// evenement ajout dot
 
-
-// ajout d'une class
-
-// ajout d'une class
-
-
-// evenement ajout dot
-// let main = document.querySelector("#banner")
-// console.log(main);
-// let mainImages = `
-// 	<img class="banner-img" src="./assets/images/slideshow/slide2.jpg" alt="Banner Print-it">
-// `
-// body.innerHTML = mainImages
-// evenement ajout dot
-
-
-
-
-// boucle image
+// boucle dot
 for (let i = 0; i < slides.length; i++) {
 	let div = document.createElement("div")
 	div.classList.add("dot")
@@ -75,30 +63,9 @@ for (let i = 0; i < slides.length; i++) {
 	dots.appendChild(div)
 		// console.log(slides[1]);
 }
-// boucle image
+// boucle dot
 
 let addClass = document.querySelectorAll(".dot")
 addClass[0].classList.add("dot_selected")
 
 
-// let img
-
-// for (let i = 0; i < slides.length; i++) {
-	
-// let image = document.querySelector("#banner")
-	
-// 	 img += `
-// 	<img class="banner-img" src="./assets/images/slideshow/${slides[index].image}" alt="Banner Print-it">
-// 	<p>${slides[index].tagLine}</p>
-// 	`
-// 	index++
-// 	console.log("test");
-// 	image.innerHTML = img
-// }
-
-// for (let i = 0; i < slides.length; i++) {
-// 	let image = document.createElement("img")
-// 	image.classList.add("banner-img")
-// 	banner.appendChild(image)
-		
-// 	}
