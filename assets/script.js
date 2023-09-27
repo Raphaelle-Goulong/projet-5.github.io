@@ -28,10 +28,19 @@ console.log(slides[text].tagLine);
 const arrowLeft = document.querySelector(".arrow_left");
 arrowLeft.addEventListener("click", function(){
 	index--
+	if (index < slides.length) {
+		console.log("repeat");
+		index = 3
+	} 
 	console.log(index)
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 
+	text--
+	if (text >= slides.length) {
+		console.log("repeat");
+		text = 0
+	} 
 	let paragraphe = document.querySelector("p")
 	paragraphe.p =  " " + slides[index].tagLine
 	console.log(paragraphe);
@@ -39,14 +48,23 @@ arrowLeft.addEventListener("click", function(){
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", () =>{
 	index++
+	// let repeatAgain = 0
+	if (index >= slides.length) {
+		console.log("repeat");
+		index = 0
+	} 
 	//(faire la condition ici)
-	console.log(index)
-
+	// console.log(index)
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 
+    text++
+	if (text >= slides.length) {
+		console.log("repeat");
+		text = 0
+	} 
 	let paragraphe = document.querySelector("p")
-	paragraphe.textContent = + slides[text].tagLine
+	paragraphe.textContent = " " + slides[text].tagLine
 	console.log(paragraphe);
 });
 // evenement click
@@ -67,5 +85,9 @@ for (let i = 0; i < slides.length; i++) {
 
 let addClass = document.querySelectorAll(".dot")
 addClass[0].classList.add("dot_selected")
-
+// if (addClass <= addClass[0]) {
+	
+// } else {
+// 	addClass++
+// }
 
