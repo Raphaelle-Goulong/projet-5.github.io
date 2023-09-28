@@ -30,7 +30,7 @@ arrowLeft.addEventListener("click", function(){
 	index--
 	if (index < slides.length) {
 		console.log("repeat");
-		index = 3
+		index = index
 	} 
 	console.log(index)
 	let bannerImg= document.querySelector(".banner-img")
@@ -42,7 +42,7 @@ arrowLeft.addEventListener("click", function(){
 		text = 0
 	} 
 	let paragraphe = document.querySelector("p")
-	paragraphe.p =  " " + slides[index].tagLine
+	paragraphe.innerHTML = "" + slides[text].tagLine 
 	console.log(paragraphe);
 });
 const arrowRight = document.querySelector(".arrow_right");
@@ -64,7 +64,8 @@ arrowRight.addEventListener("click", () =>{
 		text = 0
 	} 
 	let paragraphe = document.querySelector("p")
-	paragraphe.textContent = " " + slides[text].tagLine
+	// paragraphe.textContent = " " + slides[text].tagLine
+	paragraphe.innerHTML = "" + slides[text].tagLine 
 	console.log(paragraphe);
 });
 // evenement click
@@ -82,12 +83,16 @@ for (let i = 0; i < slides.length; i++) {
 		// console.log(slides[1]);
 }
 // boucle dot
+let dotMove = 0
 
 let addClass = document.querySelectorAll(".dot")
 addClass[0].classList.add("dot_selected")
-// if (addClass <= addClass[0]) {
-	
-// } else {
-// 	addClass++
+
+dotMove++ 
+	if (addClass >= slides.length ) {
+		addClass = 0
+		
+	}
+
 // }
 
