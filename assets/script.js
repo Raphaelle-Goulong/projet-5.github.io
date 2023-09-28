@@ -20,79 +20,65 @@ const slides = [
 let index = 0
 console.log(slides[index].image);
 
-let text = 0
-console.log(slides[text].tagLine);
-
-
 // evenement click
 const arrowLeft = document.querySelector(".arrow_left");
 arrowLeft.addEventListener("click", function(){
+	// ceci supp les dots 
+	dots[index].classList.remove("dot_selected")
+	// ceci supp les dots 
 	index--
-	if (index < slides.length) {
-		console.log("repeat");
-		index = index
+	if (index === -1) {
+		console.log(index);
+		index = slides.length -1
 	} 
 	console.log(index)
+	// ceci add les dots 
+	dots[index].classList.add("dot_selected")
+	// ceci add les dots 
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 
-	text--
-	if (text >= slides.length) {
-		console.log("repeat");
-		text = 0
-	} 
+
 	let paragraphe = document.querySelector("p")
-	paragraphe.innerHTML = "" + slides[text].tagLine 
+	paragraphe.innerHTML = "" + slides[index].tagLine 
 	console.log(paragraphe);
 });
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", () =>{
+	dots[index].classList.remove("dot_selected")
 	index++
 	// let repeatAgain = 0
 	if (index >= slides.length) {
 		console.log("repeat");
 		index = 0
 	} 
-	//(faire la condition ici)
+	dots[index].classList.add("dot_selected")
 	// console.log(index)
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 
-    text++
-	if (text >= slides.length) {
-		console.log("repeat");
-		text = 0
-	} 
+    
 	let paragraphe = document.querySelector("p")
 	// paragraphe.textContent = " " + slides[text].tagLine
-	paragraphe.innerHTML = "" + slides[text].tagLine 
+	paragraphe.innerHTML = "" + slides[index].tagLine 
 	console.log(paragraphe);
 });
 // evenement click
 
 
 // evenement ajout dot
-let dots = document.querySelector(".dots")
+let dot = document.querySelector(".dots")
 
 // boucle dot
 for (let i = 0; i < slides.length; i++) {
 	let div = document.createElement("div")
 	div.classList.add("dot")
-	// console.log(test);
-	dots.appendChild(div)
-		// console.log(slides[1]);
+	dot.appendChild(div)	
 }
 // boucle dot
-let dotMove = 0
 
-let addClass = document.querySelectorAll(".dot")
-addClass[0].classList.add("dot_selected")
 
-dotMove++ 
-	if (addClass >= slides.length ) {
-		addClass = 0
-		
-	}
+let dots = document.querySelectorAll(".dot")
+dots[0].classList.add("dot_selected")
 
-// }
 
