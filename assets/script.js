@@ -20,50 +20,54 @@ const slides = [
 let index = 0
 console.log(slides[index].image);
 
-// evenement click
+// evenement click left
 const arrowLeft = document.querySelector(".arrow_left");
 arrowLeft.addEventListener("click", function(){
 	// ceci supp les dots 
 	dots[index].classList.remove("dot_selected")
 	// ceci supp les dots 
 	index--
+	// condition qui permet de revenir à la fin du tableau
 	if (index === -1) {
 		console.log(index);
 		index = slides.length -1
 	} 
-	console.log(index)
-	// ceci add les dots 
+	// condition qui permet de revenir à la fin du tableau
+
+	// ceci permet au point de s'afficher sur l'image de l'index
 	dots[index].classList.add("dot_selected")
-	// ceci add les dots 
+	// ceci permet au point de s'afficher sur l'image de l'index
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
-
 
 	let paragraphe = document.querySelector("p")
 	paragraphe.innerHTML = "" + slides[index].tagLine 
 	console.log(paragraphe);
 });
+// evenement click left end
+
+// evenement click right
 const arrowRight = document.querySelector(".arrow_right");
 arrowRight.addEventListener("click", () =>{
 	dots[index].classList.remove("dot_selected")
 	index++
-	// let repeatAgain = 0
+	
 	if (index >= slides.length) {
 		console.log("repeat");
 		index = 0
 	} 
+	// ceci permet au point de s'afficher sur l'image de l'index
 	dots[index].classList.add("dot_selected")
-	// console.log(index)
+	// ceci permet au point de s'afficher sur l'image de l'index
+
 	let bannerImg= document.querySelector(".banner-img")
 	bannerImg.src= "./assets/images/slideshow/" + slides[index].image
 
-    
 	let paragraphe = document.querySelector("p")
-	// paragraphe.textContent = " " + slides[text].tagLine
 	paragraphe.innerHTML = "" + slides[index].tagLine 
 	console.log(paragraphe);
 });
-// evenement click
+// evenement click right end
 
 
 // evenement ajout dot
